@@ -39,7 +39,27 @@
 
 // module.exports = { LoginPage };
 
-export class LoginPage {
+// export class LoginPage {
+//   constructor(page) {
+//     this.page = page;
+//     this.username = page.locator("//input[@id='username']");
+//     this.password = page.locator("//input[@id='password']");
+//     this.loginBtn = page.locator("input[value='Login']");
+//   }
+
+//   async goto() {
+//     await this.page.goto("https://carlyle-uatx.unqork.io/?style=carlyle-rebrand#/auth/login");
+//   }
+
+//   async login(username, password) {
+//     await this.username.fill(username);
+//     await this.password.fill(password);
+//     await this.loginBtn.click();
+//   }
+// }
+
+
+class LoginPage {
   constructor(page) {
     this.page = page;
     this.username = page.locator("//input[@id='username']");
@@ -51,9 +71,11 @@ export class LoginPage {
     await this.page.goto("https://carlyle-uatx.unqork.io/?style=carlyle-rebrand#/auth/login");
   }
 
+  //custom commands
   async login(username, password) {
     await this.username.fill(username);
     await this.password.fill(password);
     await this.loginBtn.click();
   }
 }
+module.exports = { LoginPage };
